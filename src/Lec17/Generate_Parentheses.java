@@ -44,9 +44,6 @@ public class Generate_Parentheses {
 			return;
 		}
 		
-//		if(open > n || close > open) {
-//			return;
-//		}
 		if(open < n) {
 			GenerateParentheses(n, open + 1, close, ans + "(", ll);
 		}
