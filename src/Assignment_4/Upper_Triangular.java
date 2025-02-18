@@ -26,14 +26,10 @@ public class Upper_Triangular {
 	}
 	
 	public static void Print(int[][] arr) {
-		int i = arr.length-1;
-		int j = 0;
-		while(true) {
-			if(i > j) {
+		for (int i = 1; i < arr.length; i++) {
+			for (int j = 0; j < i; j++) {
 				arr[i][j] = 0;
 			}
-			i--;
-			j++;
 		}
 	}
 
