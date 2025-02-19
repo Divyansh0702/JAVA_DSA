@@ -1,5 +1,5 @@
 package Assignment_4;
-import java.util.*;
+
 import java.util.Scanner;
 
 public class KTH_Root {
@@ -10,19 +10,20 @@ public class KTH_Root {
 		int t = sc.nextInt();
 		while(t-- > 0) {
 			long n = sc.nextInt();
-			int k = sc.nextInt();
+			long k = sc.nextInt();
 			System.out.println(KthRoot(n, k));
 		}		
 		
 	}
 	
-	public static int KthRoot(long n, int k) {
+	public static long KthRoot(long n, long k) {
 		long low = 1;
 		long high = n;
 		long x = 0;
 		while(low <= high) {
-			long mid = low + (high - low) / 2;
-			if(Math.pow(mid, k) <= n) {
+			long mid = low + (high - low) / 2;	
+			long root = (long)Math.pow(mid, k);  
+			if(root <= n) {
 				x = mid;
 				low = mid + 1;
 			}
@@ -30,6 +31,8 @@ public class KTH_Root {
 				high = mid - 1;
 			}
 		}
-		return (int)x;
+		return x;
 	}
+	
+
 }
