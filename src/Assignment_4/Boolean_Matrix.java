@@ -19,17 +19,37 @@ public class Boolean_Matrix {
 		}
 		
 		Print(arr, n, m);
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
 	}
 	
 	public static void Print(int[][] arr, int n, int m) {
+		boolean[] row = new boolean[n];
+		boolean[] col = new boolean[m];
+		
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
 				if(arr[i][j] == 1) {
-					arr[] 
+					row[i] = true;
+					col[j] = true;
 				}
-				
 			}
 		}
+		
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if(row[i] || col[j]) {
+					arr[i][j] = 1;
+				}
+			}
+		}
+		
 	}
 
 }
