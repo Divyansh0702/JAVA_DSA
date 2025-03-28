@@ -22,8 +22,26 @@ public class Person {
 		return name;
 	}
 	
-	public void setAge(int age) {
-		this.age = age;
+	public void setAge(int age) { //throws Exception
+//		if(age < 0) {
+//			throw new Exception("Bklol age -ve nhi hota hai");
+//		}
+//		this.age = age;
+		
+//		using try, catch, finally to handle the exception
+		try {
+			if(age < 0) {
+				throw new Exception("Bklol age -ve nhi hota hai");
+			}
+			this.age = age;
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			
+		} finally {
+			System.out.println("You have entered a valid age");
+		}
+		
 	}
 	
 	public int getAge() {
