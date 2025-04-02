@@ -33,6 +33,7 @@ public class Linked_List {
 		}
 		else {
 			Node nn = new Node();
+			nn.val = item;
 			tail.next = nn;
 			tail = nn;
 			size++;
@@ -43,7 +44,7 @@ public class Linked_List {
 		if(k == 0) {
 			addfirst(item);
 		}
-		else if(k == size-1) {
+		else if(k == size) {
 			addlast(item);
 		}
 		else {
@@ -57,7 +58,7 @@ public class Linked_List {
 	}
 	
 	private Node getNode(int k)  throws Exception {
-		if((k < 0) || (k > size)){
+		if((k < 0) || (k >= size)){
 			throw new Exception("bklol k range m nhi hai");
 		}
 		
@@ -95,47 +96,47 @@ public class Linked_List {
 
 	public int removefirst() {
 		Node curr = head;
+		if(size == 0) {
+			return -1; // or throws an exception
+		}
 		if(size == 1) {
 			head = null;
 			tail = null;
-			size = 0;
 		}
 		else {
 			head = curr.next;
-			curr.next = null;
-			size--;
+			curr.next = null;	
 		}
+		size--;
 		return curr.val;
 	}
 	
 	public int removelast() throws Exception {
-		Node curr = tail;
-		if(size == 1) {
-			removefirst();
-		}
-		else {
-			tail = getNode(size - 2);
-			tail.next = null;
-			size--;
-		}
-		return curr.val;
+		if (size == 1) {
+            return removefirst();
+        }
+        Node curr = tail;
+        tail = getNode(size - 2);
+        tail.next = null;
+        size--;
+        return curr.val;
 	}
 	
 	public int removeatindex(int k) throws Exception{
-		Node curr = getNode(k);
-		if(k == 0) {
-			removefirst();
-		}
-		else if(k == size-1) {
-			removelast();
-		}
+		if (k == 0) {
+            return removefirst(); 
+        } 
+		else if (k == size - 1) {
+            return removelast(); 
+        } 
 		else {
-			Node prev = getNode(k-1);
-			prev.next = curr.next;
-			curr.next = null;
-			size--;
-		}
-		return curr.val;
+            Node prev = getNode(k - 1);
+            Node curr = prev.next;
+            prev.next = curr.next;
+            curr.next = null;
+            size--;
+            return curr.val;
+        }
 	}
 }
 

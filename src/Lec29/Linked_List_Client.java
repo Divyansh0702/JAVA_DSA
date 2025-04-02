@@ -11,7 +11,7 @@ public class Linked_List_Client {
 		ll.addfirst(40);
 		ll.Display();
 		
-		ll.addatindex(100, 2);
+		ll.addatindex(100, 3);
 		ll.Display();
 		
 		System.out.println(ll.getfirst());
