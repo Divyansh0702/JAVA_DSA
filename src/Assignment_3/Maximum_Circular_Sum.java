@@ -10,18 +10,17 @@ public class Maximum_Circular_Sum {
 	}
 	
 	public static int maxCircSum(int[] nums) {
-		int sum = 0, ans = Integer.MIN_VALUE;
+		int totalsum = 0, minsum = 0, minkadane = Integer.MAX_VALUE;
 		
 		for (int i = 0; i < nums.length; i++) {
-			i = (i+1) % nums.length;
+			totalsum += nums[i];
 			
-			sum += nums[i];
-			ans = Math.max(sum, ans);
-			if(sum < 0) {
-				sum = 0;
-			}
+			minsum += nums[i];
+			minkadane = Math.min(minsum, minkadane);
+			
 		}
-		return ans;
+		
+		return totalsum - minkadane;
 	}
 
 }

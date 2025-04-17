@@ -10,6 +10,7 @@ public class Product_Of_Array_ExceptSelf {
 			System.out.print(res[i] + " ");
 		}
 	}
+	
 	public static int[] Product(int[] arr) {
 		int n = arr.length;
 		
