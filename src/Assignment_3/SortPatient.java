@@ -1,4 +1,4 @@
-package Assignment_3;
+	package Assignment_3;
 
 import java.util.Scanner;
 
@@ -13,7 +13,12 @@ public class SortPatient {
 			arr[i] = sc.nextInt();
 		}
 		
-		counter(arr);
+//		counter(arr);
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.println(arr[i]);
+//		}
+		
+		DNF(arr);
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i]);
 		}
@@ -45,6 +50,31 @@ public class SortPatient {
 		for (int i = 0; i < cntTwo; i++) {
 			arr[index++] = 2;
 		}
+	}
+	
+	// Dutch National Flag Algorithm
+	public static void DNF(int[] arr) {
+		int i= 0, left = 0, right = arr.length-1;
+		while(i <= right) {
+			if(arr[i] == 0) {
+				Swap(arr, left, i);
+				left++;
+				i++;
+			}
+			else if(arr[i] == 1) {
+				i++;
+			}
+			else {
+				Swap(arr, right, i);
+				right--;
+			}
+		}
+	}
+	
+	public static void Swap(int[] arr, int direction, int i) {
+		int temp = arr[direction];
+		arr[direction] = arr[i];
+		arr[i] = temp;
 	}
 	
 }
