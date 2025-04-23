@@ -10,12 +10,11 @@ public class Reverse_String {
 	}
 	
 	public static void Reverse(String s, int i) {
-		String ans = "";
-		if(i == 0) {
-			System.out.println(ans);
+		if(i < 0) {
+			return;
 		}
+		System.out.print(s.charAt(i));
 		Reverse(s, i-1);
-		ans += s.substring(i, i-1);
 	}
 
 }
