@@ -11,8 +11,15 @@ public class Binary_Tree_Client {
 		
 		System.out.println(bt.max());
 
-		System.out.println(bt.find(65));
-
+		System.out.println(bt.find(60));
+		
+		System.out.println(bt.ht());
+		
+		bt.PreOrder();
+		bt.InOrder();
+		bt.PostOrder();
+		bt.LevelOrder();
+		
 	}
 
 }
