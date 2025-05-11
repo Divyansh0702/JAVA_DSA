@@ -24,8 +24,8 @@ public class Cars implements Comparable<Cars>{
 	public int compareTo(Cars o) {
 		// TODO Auto-generated method stub
 		
-//		return this.price - o.price;
-//		return o.speed - this.speed;
+//		return this.price - o.price;  // Sorts in Ascending Order
+//		return o.speed - this.speed;  // Sorts in Descending Order
 		return this.color.compareTo(o.color);
 	}
 	

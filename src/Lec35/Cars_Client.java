@@ -17,6 +17,7 @@ public class Cars_Client {
 		Arrays.sort(arr, new Comparator<Cars>() {
 			@Override
 			public int compare(Cars o1, Cars o2) {
+//				return Integer.compare(o1.price, o2.price);
 				return o1.price - o2.price;
 			}
 		});
@@ -27,7 +28,8 @@ public class Cars_Client {
 				return o2.speed - o1.speed;
 			}
 		});
-		
+
+			
 //		BubbleSort(arr);
 		
 		Display(arr); // will give address of the created objects of class Cars
@@ -36,7 +38,7 @@ public class Cars_Client {
 	public static <T> void Display(T[] arr){
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i] + " ");
-		}
+		}	
 
 	}
 	
