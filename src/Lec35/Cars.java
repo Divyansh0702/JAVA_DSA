@@ -1,6 +1,6 @@
 package Lec35;
 
-public class Cars implements Comparable<Cars>{
+public class Cars { //implements Comparable<Cars>
 	int price;
 	int speed;
 	String color;
@@ -20,13 +20,13 @@ public class Cars implements Comparable<Cars>{
 		return "P: " + price + " S: " + speed + " C: " + color;
 	}
 
-	@Override
-	public int compareTo(Cars o) {
-		// TODO Auto-generated method stub
-		
-//		return this.price - o.price;  // Sorts in Ascending Order
-//		return o.speed - this.speed;  // Sorts in Descending Order
-		return this.color.compareTo(o.color);
-	}
+//	@Override
+//	public int compareTo(Cars o) {
+//		// TODO Auto-generated method stub
+//		
+////		return this.price - o.price;  // Sorts in Ascending Order
+////		return o.speed - this.speed;  // Sorts in Descending Order
+//		return this.color.compareTo(o.color);
+//	}
 	
 }
