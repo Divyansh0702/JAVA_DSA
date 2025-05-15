@@ -13,6 +13,11 @@ public class Heap_Client {
 		hp.add(5);
 		hp.add(7);
 		hp.add(2);
+		
+		hp.Display();
+		
+		System.out.println(hp.remove());
+		
 		hp.Display();
 		
 		PriorityQueue<Integer> pq = new PriorityQueue<>();
