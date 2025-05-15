@@ -13,8 +13,8 @@ public class Kth_Largest_Element_in_Array {
 	}
 	
 	public static int KLargestElem(int[] arr, int k) {
-		PriorityQueue<Integer> pq = new PriorityQueue<>(); //minheap
-//		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); //miaxheap
+		PriorityQueue<Integer> pq = new PriorityQueue<>(); //min-heap
+//		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); //max-heap
 		for (int i = 0; i < k; i++) {
 			pq.add(arr[i]);
 		}
