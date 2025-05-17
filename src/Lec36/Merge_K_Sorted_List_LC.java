@@ -29,13 +29,16 @@ public class Merge_K_Sorted_List_LC{
 		                return o1.val - o2.val;
 		            }
 		        });
+		        
 		        for(int i = 0; i < lists.length; i++){
 		            if(lists[i] != null){
 		                pq.add(lists[i]);
 		            }
 		        }
+		        
 		        ListNode Dummy = new ListNode();
 		        ListNode temp = Dummy;
+		        
 		        while(!pq.isEmpty()){
 		            ListNode rn = pq.poll();
 		            Dummy.next = rn;
@@ -46,6 +49,6 @@ public class Merge_K_Sorted_List_LC{
 		        }
 		        return temp.next;
 		    }
-		}
+		}	
 
 }

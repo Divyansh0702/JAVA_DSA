@@ -1,5 +1,6 @@
 package Lec36;
 
+import java.io.PipedOutputStream;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
@@ -16,25 +17,28 @@ public class Meeting_Rooms_II {
 //			}
 //			System.out.println();
 //		}
+		
+		System.out.println(minMeetingRooms(intervals));
 	}
 	
 	public static int minMeetingRooms(int[][] intervals) {
-		Arrays.sort(intervals, (a,b) -> a[0] - b[0]);
+		Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+		PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
 		
 //		int room = 1;
-		PriorityQueue<int[]> pq = new PriorityQueue<>((a,b) -> a[1] - b[1]);
 		pq.add(intervals[0]);
 		for (int i = 1; i < intervals.length; i++) {
-			if(pq.peek()[1] <= intervals[i][0]) {
-//				room++;
-				pq.add(intervals[i]);
-			}
-			else {
+			if(intervals[i][0] >= pq.peek()[1]) {
 				pq.poll();
 				pq.add(intervals[i]);
 			}
+			else {
+				pq.add(intervals[i]);
+//				room++;
+			}
 		}
 		return pq.size();
+		
 	}
 	
 	
