@@ -2,7 +2,7 @@ package Lec37;
 
 import java.util.*;
 
-public class HashSet_Demo {
+public class Set_Demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,7 +16,7 @@ public class HashSet_Demo {
 		set.add(9);
 		set.add(19);
 		set.add(-21);
-		set.add(null);
+//		set.add(null);
 		
 		System.out.println(set);
 		
@@ -39,7 +39,7 @@ public class HashSet_Demo {
 		
 		System.out.println(set1);
 		
-		LinkedHashSet<Integer> set2 = new LinkedHashSet<>(); // increasing sorting order
+		LinkedHashSet<Integer> set2 = new LinkedHashSet<>(); // maintains the input order
 		
 		set2.add(1);
 		set2.add(29);
@@ -52,7 +52,19 @@ public class HashSet_Demo {
 		
 		System.out.println(set2);
 		
+		for (int v : set) {
+			System.out.print(v + " ");
+		}
+		
+		System.out.println();
+		
 		for (int v : set1) {
+			System.out.print(v + " ");
+		}
+		
+		System.out.println();
+		
+		for (int v : set2) {
 			System.out.print(v + " ");
 		}
 		

@@ -2,7 +2,7 @@ package Lec37;
 
 import java.util.*;
 
-public class Hash_Map_Demo {
+public class Map_Demo {
 	
 	public static void main(String[] args) {
 //		Map<String, Integer> map = new HashMap<>();
@@ -59,9 +59,20 @@ public class Hash_Map_Demo {
 		
 		System.out.println(map2);
 		
-//		for(String key : map.keySet()) {
-//			System.out.println(key + " " + map.getKey());
+		Set<String> set = map.keySet();
+
+		System.out.println();
+
+		System.out.println(set);
+			
+//		for(String key : set) {
+//			System.out.println(key + " " + map.get(key));
 //		}
+//		System.out.println();
+		
+		for(String key : map.keySet()) {
+			System.out.println(key + " " + map.get(key));
+		}
 		
 		
 		

@@ -2,13 +2,17 @@ package Lec37;
 
 import java.util.*;
 
-public class Intersection_of_Two_Arrays {
+public class Intersection_of_Two_Arrays_II {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] arr1 = {1,2,2,1};
 		int[] arr2 = {2,2};
 		
+		int[] arr = intersection(arr1, arr2);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
 	}
 	
 	public static int[] intersection(int[] arr1, int[] arr2) {
