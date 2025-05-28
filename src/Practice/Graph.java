@@ -1,0 +1,128 @@
+package Practice;
+
+import java.util.*;
+
+public class Graph {
+	private HashMap<Integer, HashMap<Integer , Integer>> map;
+	
+	public Graph(int v) {
+		map = new HashMap<>();
+		for (int i = 1; i <= v; i++) {
+			map.put(i, new HashMap<>());
+		}
+	}
+	
+	public void addEdge(int v1, int v2, int cost) {
+		map.get(v1).put(v2, cost);
+		map.get(v2).put(v1, cost);
+	}
+	
+	public boolean containsEdge(int v1 ,int v2) {
+		return map.get(v1).containsKey(v2);
+	}
+	
+	public boolean containsVertex(int v1) {
+		return map.containsKey(v1);
+	}
+	
+	private int size = 0;
+	
+	public int NoOfEdge() {
+		int sum = 0;
+		for(int key : map.keySet()) {
+			sum += map.get(key).size();
+		}
+		return sum / 2;
+	}
+	
+	public void removeEdge(int v1, int v2) {
+		map.get(v1).remove(v2);
+		map.get(v2).remove(v1);
+	}
+	
+	public void removeVertex(int v1){
+		for(int nbrs : map.get(v1).keySet()) {
+			map.get(nbrs).remove(v1);
+		}
+		map.remove(v1);
+	}
+	
+	public void Display() {
+		for(int key : map.keySet()) {
+			System.out.println(key + " " + map.get(key));
+		}
+	}
+	
+	private boolean hasPath(int src, int des, HashSet<Integer> visited) {
+// It will only search for 2th depth
+
+//		if(map.get(v1).containsKey(v2)) {
+//			return true;
+//		}
+//		else {
+//			for(int nbrs : map.get(v1).keySet()) {
+//				if(map.get(nbrs).containsKey(v2)) {
+//					return true;
+//				}
+//			}			
+//		}
+//		
+//		return false;
+		
+// We wiil use recursive approach here to iterate through the depth of the graph
+		if(src == des) {
+			return true;
+		}
+		visited.add(src);
+		for(int nbrs : map.get(src).keySet()) {
+			if(!visited.contains(nbrs)) {
+				boolean ans = hasPath(nbrs, des, visited);
+				if(ans) {
+					return true;
+				}				
+			}
+		}
+		return false;
+	
+	}
+	
+	public boolean hasPath(int src, int des) {
+		return hasPath(src, des, new HashSet<>());
+	}
+	
+	private void printPath(int src, int des, String ans, HashSet<Integer> visited) {
+		if(src == des) {
+			System.out.println(ans + des);
+			return;
+		}
+		
+		visited.add(src);
+		for(int nbrs : map.get(src).keySet()) {
+			if(!visited.contains(nbrs)) {
+				printPath(nbrs, des, ans + src, visited);		
+			}
+		}
+		visited.remove(src);
+	}
+	
+	public void printPath(int src, int des, String ans) {
+		printPath(src, des, ans, new HashSet<>());
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
