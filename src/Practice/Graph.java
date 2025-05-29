@@ -110,7 +110,108 @@ public class Graph {
 	}
 	
 	
+	public boolean BFS(int src, int des) {
+		Queue<Integer> q = new LinkedList<Integer>();
+		HashSet<Integer> visited = new HashSet<Integer>();
+		
+		q.add(src);
+		while(!q.isEmpty()) {
+//			remove
+			int rv = q.poll();
+			
+//			ignore
+			if(visited.contains(rv)) {
+				continue;
+			}
+			
+//			mark the visited
+			visited.add(rv);
+			
+//			self-work
+			if(rv == des) {
+				return true;
+			}
+			
+//			add unvisited nbrs
+			for(int nbrs : map.get(rv).keySet()) {
+				if(!visited.contains(nbrs)) {
+					q.add(nbrs);
+				}
+			}
+		}
+		return false;	
+	}
 	
+	
+	public boolean DFS(int src, int des) {
+		Stack<Integer> s = new Stack<Integer>();
+		HashSet<Integer> visited = new HashSet<Integer>();
+		
+		s.push(src);
+		while(!s.isEmpty()) {
+//			remove
+			int rv = s.pop();
+			
+//			ignore
+			if(visited.contains(rv)) {
+				continue;
+			}
+			
+//			mark the visited
+			visited.add(rv);
+			
+//			self-work
+			if(rv == des) {
+				return true;
+			}
+			
+//			add unvisited nbrs
+			for(int nbrs : map.get(rv).keySet()) {
+				if(!visited.contains(nbrs)) {
+					s.push(nbrs);
+				}
+			}
+		}
+		return false;	
+	}
+	
+	
+	public void BFT() {
+		Queue<Integer> q = new LinkedList<Integer>();
+		HashSet<Integer> visited = new HashSet<Integer>();
+		
+		for(int src : map.keySet()) {
+			if(visited.contains(src)) {
+				continue;
+			}
+			
+			q.add(src);
+			while(!q.isEmpty()) {
+//				remove
+				int rv = q.poll();
+				
+//				ignore
+				if(visited.contains(rv)) {
+					continue;
+				}
+				
+//				mark the visited
+				visited.add(rv);
+				
+//				self-work
+				System.out.println(rv + " ");
+				
+//				add unvisited nbrs
+				for(int nbrs : map.get(rv).keySet()) {
+					if(!visited.contains(nbrs)) {
+						q.add(nbrs);
+					}
+				}
+			}
+		}
+		
+		
+	}
 	
 }
 

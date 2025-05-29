@@ -29,6 +29,12 @@ public class Graph_Client {
 		System.out.println(g.hasPath(1, 3));
 		g.printPath(1, 3, "");
 		
+		System.out.println();
+		System.out.println(g.BFS(1, 3));
+		System.out.println(g.DFS(1, 4));
+		
+		g.BFT();
+		
 	}
 
 }

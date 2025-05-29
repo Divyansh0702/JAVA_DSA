@@ -24,6 +24,9 @@ public class Graph_Client {
 		g.BFT();
 		System.out.println();
 		g.DFT();
+		
+		
+		
 	}
 
 }
