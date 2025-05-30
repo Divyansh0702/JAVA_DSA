@@ -73,6 +73,7 @@ public class Graph {
 		if(src == des) {
 			return true;
 		}
+		
 		visited.add(src);
 		for(int nbrs : map.get(src).keySet()) {
 			if(!visited.contains(nbrs)) {
@@ -90,7 +91,7 @@ public class Graph {
 		return hasPath(src, des, new HashSet<>());
 	}
 	
-	private void printPath(int src, int des, String ans, HashSet<Integer> visited) {
+	public void printPath(int src, int des, String ans, HashSet<Integer> visited) {
 		if(src == des) {
 			System.out.println(ans + des);
 			return;
@@ -104,11 +105,7 @@ public class Graph {
 		}
 		visited.remove(src);
 	}
-	
-	public void printPath(int src, int des, String ans) {
-		printPath(src, des, ans, new HashSet<>());
-	}
-	
+		
 	
 	public boolean BFS(int src, int des) {
 		Queue<Integer> q = new LinkedList<Integer>();
@@ -199,7 +196,7 @@ public class Graph {
 				visited.add(rv);
 				
 //				self-work
-				System.out.println(rv + " ");
+				System.out.print(rv + " ");
 				
 //				add unvisited nbrs
 				for(int nbrs : map.get(rv).keySet()) {
@@ -209,8 +206,39 @@ public class Graph {
 				}
 			}
 		}
+		System.out.println();
+	}
+	
+	
+	public void DFT() {
+		Stack<Integer> s = new Stack<Integer>();
+		HashSet<Integer> visited = new HashSet<Integer>();
 		
-		
+		for(int src : map.keySet()) {
+			if(visited.contains(src)) {
+				continue;
+			}
+			
+			s.push(src);
+			while(!s.isEmpty()) {
+				int rv = s.pop();
+				
+				if(visited.contains(rv)) {
+					continue;
+				}
+				
+				visited.add(rv);
+				
+				System.out.print(rv + " ");
+				
+				for(int nbrs : map.get(rv).keySet()) {
+					if(!visited.contains(nbrs)) {
+						s.push(nbrs);
+					}
+				}
+			}
+		}
+		System.out.println();
 	}
 	
 }

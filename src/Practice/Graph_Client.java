@@ -1,5 +1,7 @@
 package Practice;
 
+import java.util.HashSet;
+
 public class Graph_Client {
 
 	public static void main(String[] args) {
@@ -27,13 +29,14 @@ public class Graph_Client {
 		g.Display();
 		
 		System.out.println(g.hasPath(1, 3));
-		g.printPath(1, 3, "");
+		g.printPath(1, 3, "", new HashSet<>());
 		
 		System.out.println();
 		System.out.println(g.BFS(1, 3));
 		System.out.println(g.DFS(1, 4));
 		
 		g.BFT();
+		g.DFT();
 		
 	}
 
