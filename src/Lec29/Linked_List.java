@@ -11,6 +11,7 @@ public class Linked_List {
 	private Node tail;
 	private int size;
 	
+	// O(1)
 	public void addfirst(int item) {
 		Node nn = new Node();
 		nn.val = item;
@@ -26,7 +27,8 @@ public class Linked_List {
 			size++;
 		}
 	}
-	
+
+	// O(1)
 	public void addlast(int item) {
 		if(size == 0) {
 			addfirst(item);
@@ -40,6 +42,7 @@ public class Linked_List {
 		}
 	}
 	
+	// O(N)
 	public void addatindex(int item, int k)  throws Exception {
 		if(k == 0) {
 			addfirst(item);
@@ -56,7 +59,8 @@ public class Linked_List {
 			size++;
 		}
 	}
-	
+
+	// O(N)
 	private Node getNode(int k)  throws Exception {
 		if((k < 0) || (k >= size)){
 			throw new Exception("bklol k range m nhi hai");
@@ -94,6 +98,7 @@ public class Linked_List {
 		return getNode(k).val;		
 	}
 
+	// O(1)
 	public int removefirst() {
 		Node curr = head;
 		if(size == 0) {
@@ -111,17 +116,19 @@ public class Linked_List {
 		return curr.val;
 	}
 	
+	// O(N)
 	public int removelast() throws Exception {
 		if (size == 1) {
             return removefirst();
         }
-        Node curr = tail;
+		int val = tail.val;
         tail = getNode(size - 2);
         tail.next = null;
         size--;
-        return curr.val;
+        return val;
 	}
 	
+	// O(N)
 	public int removeatindex(int k) throws Exception{
 		if (k == 0) {
             return removefirst(); 
