@@ -60,7 +60,8 @@ public class Cycle_Removal {
         }
         return null;
     }
-	
+
+//	O(n^2)
 	public void CycleRemoval1() {
 		Node meet = hasCycle();
 		if(meet == null) {
@@ -80,6 +81,8 @@ public class Cycle_Removal {
 			start = start.next;
 		}
 	}
+	
+//	O(N)
 	public void CycleRemoval2() {
 		Node meet = hasCycle();
 		if(meet == null) {
@@ -98,6 +101,8 @@ public class Cycle_Removal {
 		for (int i = 0; i < c; i++) {
 			fast = fast.next;
 		}
+		
+//		Removal
 		Node slow = head;
 		while(slow.next != fast.next) {
 			slow = slow.next;
@@ -105,6 +110,7 @@ public class Cycle_Removal {
 		}
 		fast.next = null;
 	}
+	
 	
 	public void FloyedCycleRemoval() {
 		Node meet = hasCycle();
