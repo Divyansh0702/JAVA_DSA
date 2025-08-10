@@ -61,6 +61,7 @@ public class Cycle_Removal {
         return null;
     }
 
+	
 //	O(n^2)
 	public void CycleRemoval1() {
 		Node meet = hasCycle();
@@ -81,6 +82,7 @@ public class Cycle_Removal {
 			start = start.next;
 		}
 	}
+	
 	
 //	O(N)
 	public void CycleRemoval2() {
@@ -112,13 +114,14 @@ public class Cycle_Removal {
 	}
 	
 	
+//	O(N)
 	public void FloyedCycleRemoval() {
 		Node meet = hasCycle();
 		if(meet == null) {
 			return;
 		}
 		
-		Node fast = meet;
+		Node fast = meet; // important- just put the meeting point in the fast
 		
 		Node slow = head;
 		while(slow.next != fast.next) {
@@ -128,7 +131,7 @@ public class Cycle_Removal {
 		fast.next = null;
 	}
 	
-
+	
 	public static void main(String[] args) throws Exception {
 		Cycle_Removal cl = new Cycle_Removal();
 		cl.addLast(1);

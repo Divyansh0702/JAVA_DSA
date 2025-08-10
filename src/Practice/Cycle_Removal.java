@@ -128,7 +128,22 @@ public class Cycle_Removal {
 				fast = fast.next;
 			}
 			fast.next = null;
+		}
+		
+		
+		public void FloydCycleRemoval() {
+			Node meet = hasCycle();
+			if(meet == null) {
+				return;
+			}
 			
+			Node fast = meet;
+			Node slow = head;
+			while(slow.next != fast.next) {
+				slow = slow.next;
+				fast = fast.next;
+			}
+			fast.next = null;
 		}
 		
 		public static void main(String[] args) throws Exception{
@@ -146,7 +161,7 @@ public class Cycle_Removal {
 			System.out.println(cl.hasCycle());
 			
 			cl.CreateCycle();
-			cl.CycleRemoval2();
+			cl.FloydCycleRemoval();
 			cl.Display();
 			
 		}
