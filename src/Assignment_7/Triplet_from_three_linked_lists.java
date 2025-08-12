@@ -87,6 +87,8 @@ public class Triplet_from_three_linked_lists {
 //	}
 	
 //	Using HashSet
+//	O(n x m + k)
+//	We are using hashset according to questions given conditions
 	public static void triplet(Node head1, Node head2, Node head3, int target) {
 		Set<Integer> set = new HashSet<Integer>();
 		
@@ -97,12 +99,12 @@ public class Triplet_from_three_linked_lists {
 		}
 		
 		Node temp1 = head1;
-		while(temp1 != null) {
+		while(temp1 != null) { // O(n)
 			
 			Node temp2 = head2;
-			while(temp2 != null) {
+			while(temp2 != null) { // O(m)
 				int needed = target - (temp1.val + temp2.val);
-				if(set.contains(needed)) {
+				if(set.contains(needed)) { // O(k)
 					System.out.println(temp1.val + " " + temp2.val + " " + needed);
 					return;
 				}
