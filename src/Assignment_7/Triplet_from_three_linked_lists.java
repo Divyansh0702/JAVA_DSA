@@ -53,6 +53,7 @@ public class Triplet_from_three_linked_lists {
 //	Total: O(m logm + k logk + n x (m + k))
 //	Space: O(m + k) for arrays
 	
+//	Using Arrays
 //	public static void triplet(Node head1, Node head2, Node head3, int target) {
 //		int[] arr2 = toArray(head2);
 //		int[] arr3 = toArray(head3);
@@ -85,6 +86,7 @@ public class Triplet_from_three_linked_lists {
 //		}
 //	}
 	
+//	Using HashSet
 	public static void triplet(Node head1, Node head2, Node head3, int target) {
 		Set<Integer> set = new HashSet<Integer>();
 		
@@ -102,6 +104,7 @@ public class Triplet_from_three_linked_lists {
 				int needed = target - (temp1.val + temp2.val);
 				if(set.contains(needed)) {
 					System.out.println(temp1.val + " " + temp2.val + " " + needed);
+					return;
 				}
 				temp2 = temp2.next;
 			}
