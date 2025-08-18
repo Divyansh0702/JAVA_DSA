@@ -1,12 +1,10 @@
 package Lec32;
 
-public class Sum_Root_To_Leaf_Numbers {
+public class BinaryTree_RightSide_View {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-//		Go find at leetcode
-		
+		// Go find at leetcode
 	}
 
 }
