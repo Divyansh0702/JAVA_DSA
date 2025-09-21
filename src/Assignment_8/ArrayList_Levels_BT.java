@@ -1,8 +1,8 @@
 package Assignment_8;
 
-import java.util.*;
+import  java.util.*;
 
-public class Level_Order_ZigzagBT {
+public class ArrayList_Levels_BT {
 	
 	static Scanner sc = new Scanner(System.in);
 	
@@ -40,11 +40,11 @@ public class Level_Order_ZigzagBT {
 			return nn;
 		}
 		
-		public void LevelOrderZZ() {
+		public List<List<Integer>> Level(){
+			List<List<Integer>> res = new ArrayList<>();
+			
 			Queue<Node> q = new LinkedList<>();
 			q.add(root);
-			
-			boolean LeftToRight = true;
 			
 			while(!q.isEmpty()) {
 				int size = q.size();
@@ -57,28 +57,19 @@ public class Level_Order_ZigzagBT {
 					if(rv.left != null) q.add(rv.left);
 					if(rv.right != null) q.add(rv.right);
 				}
-				
-				if(!LeftToRight) {
-					Collections.reverse(level);
-				}
-				
-				for(int val : level) {
-					System.out.print(val + " ");
-				}
-				
-				LeftToRight = !LeftToRight;
+				res.add(level);
 			}
-		
+			return res;
 		}
-	
 	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BinaryTree bt1 = new BinaryTree();
 		
-		bt1.LevelOrderZZ();
+		System.out.println(bt1.Level());
 	}
+//	50 true 12 true 18 false false true 13 false false false
 	
-//	10 true 20 true 40 false false true 50 false false true 30 true 60 false false true 73 false false
 }
