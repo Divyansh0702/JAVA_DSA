@@ -77,6 +77,7 @@ public class Sibling_BT {
 		
 		bt.sibling();
 	}
-
+	
+//  Input
 //	50 true 12 true 18 false false false false
 }
