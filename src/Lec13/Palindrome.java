@@ -8,6 +8,35 @@ public class Palindrome {
 		System.out.println(isPalindrome(s1));
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static boolean isPalindrome(String s1) {
 		int i=0;
 		int j=s1.length()-1;
