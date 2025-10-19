@@ -9,7 +9,7 @@ public class Palindromic_Substrings {
 
 
 // Axis-Orbit (Optimized Approach)
-// O( N^2 )
+// O(N^2)
 
 	public static int Axis_Orbit(String s) {
 		int odd = 0;
