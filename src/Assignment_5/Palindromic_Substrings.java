@@ -4,7 +4,7 @@ public class Palindromic_Substrings {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(Axis_Orbit("naan"));
+		System.out.println(Axis_Orbit("nitin"));
 	}
 
 
