@@ -28,7 +28,6 @@ public class Longest_Palindromic_Substring {
 				if(odd.length() > ans.length()) {
 					ans = odd;
 				}
-			
 			}
 		}
 		
@@ -42,7 +41,6 @@ public class Longest_Palindromic_Substring {
 				if(even.length() > ans.length()) {
 					ans = even;
 				}
-		
 			}
 		}
 		

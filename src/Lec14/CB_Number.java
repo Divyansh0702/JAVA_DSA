@@ -6,7 +6,7 @@ public class CB_Number {
 		// TODO Auto-generated method stub
 		String s = "81615";
 		CountCBNo(s);
-	}
+	}	
 	
 	public static void CountCBNo(String s) {
 		int count = 0;
