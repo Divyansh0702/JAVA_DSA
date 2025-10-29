@@ -23,6 +23,7 @@ public class Rotate_String {
 		return s1;
 	}
 	
+//	reverse
 	public static String reverse(String s, int i, int j) {
 		StringBuilder str = new StringBuilder(s);
 
