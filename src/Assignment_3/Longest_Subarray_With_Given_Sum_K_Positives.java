@@ -6,6 +6,7 @@ public class Longest_Subarray_With_Given_Sum_K_Positives {
 		// TODO Auto-generated method stub
 		int[] nums = {10, 5, 2, 7, 1, 9};
 		System.out.println(LongestSubarray(nums, 15));
+		System.out.println(LongestSubarray2(nums, 15));
 	}
 	
 //	TC - O(N^2) SC - O(1)
@@ -18,7 +19,6 @@ public class Longest_Subarray_With_Given_Sum_K_Positives {
 				
 				if(sum == k) {
 					res = Math.max(res, j - i + 1);
-					break;
 				}
 			}
 		}
@@ -42,6 +42,7 @@ public class Longest_Subarray_With_Given_Sum_K_Positives {
 			if(sum == k) {
 				res = Math.max(res, right - left + 1);
 			}
+			right++;
 		}
 		return res;
 	}
